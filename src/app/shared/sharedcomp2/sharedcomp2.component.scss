@@ -1,0 +1,17 @@
+table {
+    margin: auto;
+    background-image: linear-gradient(to top left, lightgreen, lightskyblue);
+    box-shadow: 5px 4px lightgray;
+    border-radius: 5px;
+}
+th, tr, td {
+    border: 1px solid black;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+td {
+    height: 70px;
+    width: 140px;
+}
+

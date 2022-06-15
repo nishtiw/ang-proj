@@ -6,6 +6,7 @@ import { Maincomp3Component } from './maincomp3/maincomp3.component';
 import { Maincomp4Component } from './maincomp4/maincomp4.component';
 import { Maincomp5Component } from './maincomp5/maincomp5.component';
 import { Maincomp6Component } from './maincomp6/maincomp6.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,9 @@ import { Maincomp6Component } from './maincomp6/maincomp6.component';
     Maincomp6Component
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [Maincomp1Component]
 })

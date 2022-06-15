@@ -11,7 +11,7 @@ import { Sharedcomp6Component } from './sharedcomp6/sharedcomp6.component';
 
 @NgModule({
   declarations: [
-    Sharedcomp1Component,
+    // Sharedcomp1Component,
     Sharedcomp2Component,
     Sharedcomp3Component,
     Sharedcomp4Component,
@@ -21,6 +21,6 @@ import { Sharedcomp6Component } from './sharedcomp6/sharedcomp6.component';
   imports: [
     CommonModule
   ],
-  exports: [Sharedcomp1Component]
+  // exports: [Sharedcomp1Component]
 })
 export class SharedModule { }

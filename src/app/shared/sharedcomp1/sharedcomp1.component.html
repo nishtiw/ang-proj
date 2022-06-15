@@ -1,1 +1,11 @@
-<p>sharedcomp1 works!</p>
+<div class="spacing">
+    <!-- <button (click)="loadHome()" class="button">Home</button> -->
+    <a routerLink="home" class="button">Home</a>
+    <a routerLink="tt" class="button">Time Table</a>
+    <!-- <a routerLink="login" class="button">Logout</a> -->
+    <button (click)="onLogout()" class="button">Logout</button>
+    <div >
+        <!-- <h1 *ngIf="displayUsername()">Welcome to your profile {{name }}!</h1> -->
+    <router-outlet></router-outlet>
+    </div>
+</div>

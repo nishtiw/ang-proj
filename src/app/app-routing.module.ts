@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { Comp1Component } from './layout/comp1/comp1.component';
+import { Comp1Component } from './layout/register/comp1.component';
 import { LayoutModule } from './layout/layout.module';
 
 const routes: Routes = [];

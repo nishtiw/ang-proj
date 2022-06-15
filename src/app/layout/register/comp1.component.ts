@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthLoginService } from 'src/app/auth-login.service';
 
 @Component({
   selector: 'app-comp1',
@@ -8,16 +10,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class Comp1Component implements OnInit {
   loginForm = new FormGroup({
-    user: new FormControl('', Validators.required),
-    course: new FormControl('', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]{1,}')])),
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
   })
 
-  user2 = new FormControl('',Validators.required);
+  // user2 = new FormControl('',Validators.required);
 
   objects: any = [];
 
   loginUser() {
-    if(this.loginForm.controls['user'].valid) {
+    if(this.loginForm.controls['username'].valid) {
       (document.getElementById('n') as HTMLFormElement).style.color = "black";
       // return true;
     }
@@ -26,7 +28,7 @@ export class Comp1Component implements OnInit {
       return false;
     }
 
-    if(this.loginForm.controls['course'].valid) {
+    if(this.loginForm.controls['password'].valid) {
       (document.getElementById('c') as HTMLFormElement).style.color = "black";
       // return true;
     }
@@ -35,19 +37,23 @@ export class Comp1Component implements OnInit {
       return false;
     }
 
-    if (this.loginForm.status == 'INVALID') {
-      return false;
-    }
-    else {
+    // if (this.loginForm.status == 'INVALID') {
+    //   return false;
+    // }
+    // else {
       this.objects.push(this.loginForm.value);
-      console.warn(this.loginForm.value);
-      console.log(this.objects);
+      // console.warn(this.loginForm.value);
+      // console.log(this.objects);
+      this._authLoginService.setAllUsers(this.objects);
       return true;
-    }
+    // }
   }
-  constructor() { }
+  constructor(private _authLoginService: AuthLoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  Login() {
+    this.router.navigate(['/login']);
+  }
 }

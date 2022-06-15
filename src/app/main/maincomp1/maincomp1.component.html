@@ -1,13 +1,13 @@
 <div class="loginform">
     <h1 class="text-align">Login</h1>
     <div>
-      <form>
+      <form [formGroup]="loginForm" (ngSubmit)="sendFormData()">
         <div class="float100">
           <div class="float50">
             <label for="" id="n">Enter Name: </label>
           </div>
           <div class="float50">
-            <input type="text" name="" id="user" placeholder="Enter name" >
+            <input type="text" name="" id="user" placeholder="Enter name" formControlName="username">
           </div>
         </div>
         <div class="float100">
@@ -15,15 +15,17 @@
             <label for="" id="c">Enter Password: </label>
           </div>
           <div class="float50">
-            <input type="password" name="" id="course" placeholder="Enter password" >
-          </div>
-          <div class="button-div">
-            <input type="submit" value="Login" class="button">
+            <input type="password" name="" id="course" placeholder="Enter password" formControlName="password">
           </div>
         </div>
+        <div class="button-div">
+          <input type="submit" value="Login" class="button">
+        </div>
       </form>
+      <div class="button-div">
+        <span>New user? <button (click)="register()" class="button">Register</button> </span>
+      </div>
       <!-- <p>User name: {{ loginForm.value }}</p> -->
       <!-- <p>{{ loginForm.status }}</p> -->
     </div>
   </div>
-  
